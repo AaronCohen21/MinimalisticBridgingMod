@@ -1,6 +1,7 @@
 package me.cg360.mod.placement.raytrace;
 
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.network.ClientPlayerInteractionManager;
 import net.minecraft.client.util.math.Vector3d;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -28,21 +29,31 @@ public class RayTraceHandler {
     }
 
     public static HitResult rayTrace(Entity entity, World world, Vec3d startPos, Vec3d ray, RaycastContext.ShapeType blockMode, RaycastContext.FluidHandling fluidMode, double range) {
-        return rayTrace(entity, world, startPos, ray.multiply(range), blockMode, fluidMode);
+        return rayTrace(entity, world, startPos, startPos.add(ray.multiply(range)), blockMode, fluidMode);
     }
 
-    public static HitResult rayTrace(Entity entity, World world, Vec3d startPos, Vec3d ray, RaycastContext.ShapeType blockMode, RaycastContext.FluidHandling fluidMode) {
-        Vec3d end = startPos.add(ray);
-        RaycastContext context = new RaycastContext(startPos, end, blockMode, fluidMode, entity);
+    public static HitResult rayTrace(Entity entity, World world, Vec3d startPos, Vec3d endPos, RaycastContext.ShapeType blockMode, RaycastContext.FluidHandling fluidMode) {
+        RaycastContext context = new RaycastContext(startPos, endPos, blockMode, fluidMode, entity);
+
         return world.raycast(context);
     }
 
+    /**
+     * Gets the maximum place distance for a given player.
+     * @param player the player to check
+     * @return the distance at which the player can place.
+     */
     public static double getEntityRange(PlayerEntity player) {
-        return 5d; //TODO: Check if the player is in survival or creative
+        if(player.getWorld().isClient) {
+            MinecraftClient cli = MinecraftClient.getInstance();
+            ClientPlayerInteractionManager interact = cli.interactionManager;
+            if (interact != null)
+                return interact.getReachDistance();
+        }
+        return 4.5d;
     }
 
-    /** *
-     *
+    /**
      * @param player - the player entity using the raycast guide.
      * @return Pair | Left = Starting position, Right = Direction
      */
