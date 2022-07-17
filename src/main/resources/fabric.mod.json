@@ -1,35 +1,34 @@
 {
   "schemaVersion": 1,
-  "id": "placementpog",
+  "id": "minimalistic-bridging",
   "version": "${version}",
 
-  "name": "Survival Building Toolkit",
-  "description": "A collection of building utilities to be used when building, primarily in survival.",
+  "name": "Minimalistic Bridging",
+  "description": "This is a fork of CG360's original mod: a fabric port of Quark's Reach-Around Placement feature with some tweaks to refine its experience.\nThis fork brings back the old text-based HUD and merges it with the crosshair which is a lot less intrusive than the current icon-based system.",
   "authors": [
-    "CG360"
+    "Aaron Cohen"
   ],
   "contact": {
-    "homepage": "",
-    "sources": "https://github.com/CloudG360/Survival-Building-Toolkit"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/minimalistic-bridging"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/placementpog/icon.png",
+  "icon": "assets/minimalistic-bridging/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "me.cg360.mod.placement.PlacementMod"
+      "com.aaroncohen.bridging.BridgingMod"
     ],
     "client": [
-      "me.cg360.mod.placement.PlacementMod"
+      "com.aaroncohen.bridging.BridgingMod"
     ]
   },
   "mixins": [
-    "placementpog.mixins.json"
+    "minimalistic-bridging.mixins.json"
   ],
 
-  "accessWidener": "placementpog.accesswidener",
+  "accessWidener": "minimalistic-bridging.accesswidener",
 
   "depends": {
     "fabricloader": ">=0.14.8",
@@ -37,5 +36,14 @@
     "minecraft": "1.19.x",
     "java": ">=17"
   },
-  "suggests": { }
+  "suggests": { },
+
+  "custom": {
+    "modmenu": {
+      "links": {
+        "GitHub": "https://github.com/AaronCohen21/MinimalisticBridgingMod",
+        "Original Mod": "https://www.curseforge.com/minecraft/mc-mods/survival-building-toolkit-fabric"
+      }
+    }
+  }
 }

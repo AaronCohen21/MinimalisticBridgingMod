@@ -1,4 +1,4 @@
-package me.cg360.mod.placement.raytrace;
+package com.aaroncohen.bridging.raytrace;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerInteractionManager;

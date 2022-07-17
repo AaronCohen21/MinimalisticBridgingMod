@@ -1,10 +1,10 @@
-package me.cg360.mod.placement;
+package com.aaroncohen.bridging;
 
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.ModInitializer;
 
-public class PlacementMod implements ClientModInitializer, ModInitializer {
+public class BridgingMod implements ClientModInitializer, ModInitializer {
 
     @Override
     public void onInitializeClient() {
