@@ -13,9 +13,9 @@ blocks where the interactable surface is not visible.
 This fork brings back the old text-based HUD and merges it with the crosshair which is a lot less intrusive than the current icon-based system.
 
 # Old HUD
-![](https://media.forgecdn.net/attachments/477/650/old.png)
+![Old HUD](https://user-images.githubusercontent.com/35773503/179600519-d45f530c-d76b-420e-aa23-c1357a9fc621.png)
 # New HUD
-![](https://media.forgecdn.net/attachments/477/651/new.png)
+![New HUD](https://user-images.githubusercontent.com/35773503/179600609-1e963bcc-7fc8-4c35-87e3-86041cffbf29.png)
 # Changes from Quark include:
 
 - More forgiving placement logic
