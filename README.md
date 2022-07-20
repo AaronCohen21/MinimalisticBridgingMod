@@ -1,6 +1,6 @@
 # Minimalistic Bridging
 
-![](https://cf.way2muchnoise.eu/full_minimalistic-bridging_downloads.svg?badge_style=flat)
+![](https://cf.way2muchnoise.eu/full_645692_downloads.svg?badge_style=flat)
 
 ![Version: Commons](https://img.shields.io/badge/Version-1.1-blue?style=for-the-badge)
 ![Version: Commons](https://img.shields.io/badge/Java-17-red?style=for-the-badge)
